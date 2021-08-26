@@ -3,9 +3,7 @@ if (document.readyState == 'loading') {
 } else {
     ready()
 }
-
-
-function ready() { /* ta7riket l cart*/
+function ready() { 
     var removeCartItemButtons = document.getElementsByClassName('danger')
     for (var i = 0; i < removeCartItemButtons.length; i++) {
         var button = removeCartItemButtons[i]
@@ -23,29 +21,20 @@ function ready() { /* ta7riket l cart*/
         var button = addToCartButtons[i]
         button.addEventListener('click', addToCartClicked)
     }
-
 }
-
-
-
-function removeCartItem(event) {   /*l event heya l nazla al button*/
+function removeCartItem(event) {   
     var buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
     updateCartTotal()
 }
-
-
-function quantityChanged(event) {  /*l event l change fl input l enty 3malth*/
+function quantityChanged(event) {  
     var input = event.target
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
     }
     updateCartTotal()
 }
-
-
-
-function addToCartClicked(event) { /*l event ki tenzel al bouton add*/
+function addToCartClicked(event) {
     var button = event.target
     var hotelItem = button.parentElement.parentElement
     var title = hotelItem.getElementsByClassName('hotel-item-title')[0].innerText
@@ -54,8 +43,6 @@ function addToCartClicked(event) { /*l event ki tenzel al bouton add*/
     addItemToCart(title, price, imageSrc)
     updateCartTotal()
 }
-
-
 function addItemToCart(title, price, imageSrc) {  
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
@@ -67,8 +54,6 @@ function addItemToCart(title, price, imageSrc) {
             return
         }
     }
-
-
     var cartRowContents = `
         <div class="cart-item cart-column">
             <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
@@ -84,8 +69,6 @@ function addItemToCart(title, price, imageSrc) {
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
 }
-
-/*to update the totale*/
 function updateCartTotal() {
     var cartItemContainer = document.getElementsByClassName('cart-items')[0]
     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
