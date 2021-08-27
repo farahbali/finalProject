@@ -7,6 +7,7 @@
 }
 .logo  {
     margin-right: 30%;
+    width: 64px;
 }
 i{
     margin-right: 10px;
@@ -15,7 +16,7 @@ i{
     color:white;
     font-size:large;
     font-weight: bolder;
-    /* margin-right:2%;*/
+    
 } 
 .nav-item a:hover{
     display: block;
@@ -69,7 +70,7 @@ i{
 }
 .carousel{
     width: 100%;
-    margin-bottom: 10%;
+    margin-bottom: 3%;
 }
 .img{
     height: 650px ;
@@ -99,6 +100,7 @@ i{
     flex-direction: column;
     margin-top: 10%;
     margin-left: 40%;
+    color: darkgrey;
 }
 .carousel-caption h5{
   color:white;
